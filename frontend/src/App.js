@@ -6,18 +6,25 @@
 //    - EventDetailPage
 //    - NewEventPage
 //    - EditEventPage
+//DONE
 // 2. Add routing & route definitions for these five pages
 //    - / => HomePage
 //    - /events => EventsPage
 //    - /event/<some-id> => EventDetailPage
 //    - /events/new => NewEventPage
 //    - /event/<some-id>/edit => EditEventPage
+//DONE
 // 3. Add a root layout that adds the <MainNavigation> component above all page components
+// DONE
 // 4. Add properly working links to the MainNavigation
+//DONE
 // 5. Ensure that the links in MainNavigation receive an "active" class when active
+//DONE
 // 6. Output a list of dummy events to the EventsPage
 //    Every list item should include a link to the respective EventDetailPage
+//DONE
 // 7. Output the ID of the selected event on the EventDetailPage
+//DONE
 // BONUS: Add another (nested) layout route that adds the <EventNavigation> component above all /events... page components
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
@@ -34,15 +41,15 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <HomePage /> },
       {
-        path: '/events',
+        path: 'events',
         element: <EventsPage />,
       },
-      { path: '/event/new', element: <NewEventPage /> },
       {
-        path: '/events/:eventId',
+        path: 'events/:eventId',
         element: <EventDetailPage />,
       },
-      { path: '/event/:eventId/edit', element: <EditEventPage /> },
+      { path: 'events/new', element: <NewEventPage /> },
+      { path: 'events/:eventId/edit', element: <EditEventPage /> },
     ],
   },
 ]);
