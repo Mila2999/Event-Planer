@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 const EVENTS = [
-  { id: 'E1', title: 'event 1' },
-  { id: 'E2', title: 'event 1' },
-  { id: 'E3', title: 'event 1' },
+  { id: 'E1', title: 'Some event ' },
+  { id: 'E2', title: 'Another event ' },
+  { id: 'E3', title: 'Third event ' },
 ];
 function EventsPage() {
   return (
