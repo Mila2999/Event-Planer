@@ -29,12 +29,13 @@
 //DONE
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import RootLayout from './pages/Root';
-import EventsPage from './pages/Events';
+import EventsPage, { loader as eventsLoader } from './pages/Events';
 import HomePage from './pages/Home';
 import NewEventPage from './pages/NewEvent';
 import EditEventPage from './pages/EditEvent';
 import EventDetailPage from './pages/EventDetail';
 import EventsRootLayout from './pages/EventsRoot';
+import { loader } from './pages/Events';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -48,16 +49,7 @@ const router = createBrowserRouter([
           {
             index: true,
             element: <EventsPage />,
-            loader: async () => {
-              const response = await fetch('http://localhost:8080/events');
-
-              if (!response.ok) {
-                // ...
-              } else {
-                const resData = await response.json();
-                return resData.events;
-              }
-            },
+            loader: eventsLoader,
           },
           {
             path: ':eventId',
