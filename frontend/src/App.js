@@ -35,11 +35,12 @@ import NewEventPage from './pages/NewEvent';
 import EditEventPage from './pages/EditEvent';
 import EventDetailPage from './pages/EventDetail';
 import EventsRootLayout from './pages/EventsRoot';
-import { loader } from './pages/Events';
+import ErrorPage from './pages/Error';
 const router = createBrowserRouter([
   {
     path: '/',
     element: <RootLayout />,
+    errorElement: <ErrorPage />,
     children: [
       { index: true, element: <HomePage /> },
       {
