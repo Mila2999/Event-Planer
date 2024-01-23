@@ -63,7 +63,6 @@ function EventForm({ method, event }) {
     </Form>
   );
 }
-
 export default EventForm;
 
 export async function action({ request, params }) {
@@ -76,7 +75,9 @@ export async function action({ request, params }) {
     date: data.get('date'),
     description: data.get('description'),
   };
+
   let url = 'http://localhost:8080/events';
+
   if (method === 'PATCH') {
     const eventId = params.eventId;
     url = 'http://localhost:8080/events/' + eventId;
@@ -87,6 +88,7 @@ export async function action({ request, params }) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(eventData),
   });
+
   if (response.status === 422) {
     return response;
   }

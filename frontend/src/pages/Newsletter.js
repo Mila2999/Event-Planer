@@ -8,7 +8,6 @@ function NewsletterPage() {
     </PageContent>
   );
 }
-
 export default NewsletterPage;
 
 export async function action({ request }) {

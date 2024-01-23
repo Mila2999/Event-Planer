@@ -39,5 +39,4 @@ function MainNavigation() {
     </header>
   );
 }
-
 export default MainNavigation;
